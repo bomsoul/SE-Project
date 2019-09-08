@@ -21,12 +21,20 @@ public class LoginController {
     Button login;
     @FXML
     Label alert;
-    public void onHandleLogin(){
+    public void onHandleLogin(ActionEvent actionEvent){
         if (username.getText().equals("") || password.getText().equals("")){
             alert.setVisible(true);
         }
         else{
-
+            login = (Button) actionEvent.getSource();
+            Stage stage =(Stage)login.getScene().getWindow();
+            FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/home.fxml"));
+            try{
+                stage.setScene(new Scene((Parent) fxmlLoader.load(),800,600));
+                stage.show();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
         }
 
     }
