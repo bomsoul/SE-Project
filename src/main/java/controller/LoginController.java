@@ -30,7 +30,9 @@ public class LoginController {
             Stage stage =(Stage)login.getScene().getWindow();
             FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/home.fxml"));
             try{
-                stage.setScene(new Scene((Parent) fxmlLoader.load(),800,600));
+                Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
+                scene.getStylesheets().add("stylesheet.css");
+                stage.setScene(scene);
                 stage.show();
             }catch (IOException e){
                 e.printStackTrace();
@@ -44,7 +46,9 @@ public class LoginController {
         Stage stage =(Stage)register.getScene().getWindow();
         FXMLLoader fxmlLoader =new FXMLLoader(getClass().getResource("/register.fxml"));
         try{
-            stage.setScene(new Scene((Parent) fxmlLoader.load(),800,600));
+            Scene scene = new Scene((Parent) fxmlLoader.load(), 800, 600);
+            scene.getStylesheets().add("stylesheet.css");
+            stage.setScene(scene);
             stage.show();
         }catch (IOException e){
             e.printStackTrace();
